@@ -1,0 +1,1127 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+/*Primera parte dedicada a la version mobile*/
+
+:root {
+    --color-gris: #B3B2B7;
+    --color-principal: #F3603B;
+    --color-secundario: #232C50;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+main,
+.card {
+    font-size: 16px;
+    width: 375px;
+}
+
+li {
+    transition: all 0.5s ease;
+}
+
+h1,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-secundario);
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+h6 {
+    background-color: rgba(255, 146, 113, 0.15);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    font-size: 14px;
+    margin: 5px 2px;
+}
+
+h3 {
+    font-size: 36px;
+    font-weight: 700;
+    position: relative;
+}
+
+p {
+    color: var(--color-gris);
+    font-size: 0.8rem;
+}
+
+
+
+
+
+
+
+
+/*icono de hamburguesa y lista desplegable 
+con fondo de color principal y opacity */
+
+.menu-wrap {
+    position: fixed;
+    right: 6px;
+    top: 16px;
+    z-index: 1;
+}
+
+.menu-wrap .toggler {
+    cursor: pointer;
+    height: 50px;
+    opacity: 0;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    width: 50px;
+    z-index: 2;
+}
+
+.menu-wrap .hamburguesa {
+    align-items: center;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    padding: 1px;
+    position: absolute;
+    opacity: 0.8;
+    right: 6px;
+    top: 6px;
+    width: 40px;
+    z-index: 1;
+}
+
+.menu-wrap .hamburguesa>div {
+    align-items: center;
+    background-color: #17083a;
+    display: flex;
+    height: 8px;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease;
+    width: 100%;
+}
+
+.menu-wrap .hamburguesa>div:before,
+.menu-wrap .hamburguesa>div:after {
+    background-color: inherit;
+    content: '';
+    height: 8px;
+    position: absolute;
+    top: -16px;
+    width: 100%;
+    z-index: 1;
+}
+
+.menu-wrap .hamburguesa>div:after {
+    top: 16px;
+}
+
+/* animar toggler*/
+.menu-wrap .toggler:checked+.hamburguesa>div {
+    transform: rotate(135deg);
+}
+
+/*convertir hamburguesa es X*/
+.menu-wrap .toggler:checked+.hamburguesa>div::before,
+.menu-wrap .toggler:checked+.hamburguesa>div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/*show menu*/
+.menu-wrap .toggler:checked~.menu {
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked~.menu>div {
+    transition-duration: 0.7s;
+    transform: scale(1);
+}
+
+.menu-wrap .toggler:checked~.menu>div>div {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu {
+    align-items: flex-start;
+    display: flex;
+    height: 50%;
+    justify-content: flex-end;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    width: 50%;
+}
+
+.menu-wrap .menu>div {
+    align-items: center;
+    background-color: #e25b31;
+    border-bottom-left-radius: 25px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    opacity: 0.7;
+    transform: scale(0);
+    transition: all 0.4s ease;
+    width: 100%;
+}
+
+.menu-wrap .menu>div>div {
+    max-height: 100vw;
+    max-width: 90vw;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu>div>div>ul>li {
+    color: white;
+    font-size: 16px;
+    list-style: none;
+    padding: 10px;
+}
+
+.menu-wrap .menu>div>div>ul>li>a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+/*Botones*/
+.btn {
+    align-items: center;
+    background-color: var(--color-principal);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    height: 44px;
+    width: 134px;
+}
+
+.btn a {
+    align-items: center;
+    background-color: var(--color-principal);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 44px;
+    justify-content: center;
+    padding: 10px;
+    width: 134px;
+}
+
+a,
+a:visited, 
+a:focus {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/*Header */
+header {
+    align-items: center;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    padding: 0 25px;
+    width: 100%;
+}
+
+header .btn {
+    display: none;
+}
+
+header img {
+    height: 23.74px;
+    width: 145.54px;
+}
+
+
+
+
+
+
+/*Main Contenedor 1 - apartado principal y graficos*/
+.contenedor1 {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    height: 750px;
+}
+
+.minicontenedor1 img {
+    width: 100%;
+}
+
+.minicontenedor1 {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50%;
+    justify-content: center;
+    text-align: center;    
+}
+
+.minicontenedor1 p {
+    padding: 0 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+/*Main contenedor 2 lista de beneficios*/
+.contenedor2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 700px;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+.minicontenedor2 p {
+    padding: 0 20px;
+    text-align: center;
+}
+
+.minicontenedor2 {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8rem;    
+    height: 75%;
+    justify-content: center;
+    position: relative;
+    top: 25px;
+    width: 100%;
+}
+
+.minicontenedor2 button {
+    background-color: var(--color-principal);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    display: inline-block;
+    font-size: 14px;
+    gap: 10px;
+    height: 43px;
+    padding: 10px 15px;
+    width: 59px;
+}
+
+#mini2 { 
+    /*primer mitad del contenedor 2,
+     le puse id porque el alineamiento de
+      este es diferente a su hermano*/
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 25%;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+/*Main -*contenedor 3  son las tarjetas de personas con su comentarios*/
+.contenedor3 {
+    display: flex;
+    flex-direction: column;   
+    justify-content: flex-start;
+    width: 375px;
+}
+
+.minicontenedor3 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    top: 25px;
+    width: 375px;
+}
+
+.minicontenedor3 > ul {
+    display: flex;
+    justify-content: baseline;
+    overflow: auto;
+    width: inherit;
+}
+
+.minicontenedor3>ul>li {
+    width: inherit;
+}
+
+.card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    width: inherit;
+}
+
+.card img {
+    height: 60px;
+    margin-bottom: 20px;
+    width: 60px;
+}
+
+.card h5 {
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+footer {
+    position: relative;
+    width: 375px;
+}
+
+.contenedor4,
+.contenedor5 {
+    position: relative;
+    width: 100%;
+}
+
+.contenedor4 {
+    align-items: center;
+    background-color: var(--color-principal);
+    background-image: url(../imagenes/bg-tablet-pattern\ copy.svg);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 26px;
+    height: 324px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0 5%;
+    text-align: center;
+}
+
+.contenedor4 button {
+    background-color: white;
+    color: var(--color-principal);
+    position: relative;
+    top: 30px;
+}
+
+
+
+
+
+
+
+
+
+.contenedor5 {
+    background-color: #1E1E26;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    height: 547px;
+    justify-content: space-between;
+    margin: 0;
+    position: relative;
+}
+
+.contenedor5>p {
+    align-self: center;
+    bottom: 3%;
+    position: absolute;
+    text-align: center;
+}
+
+#redes-sociales {
+    align-items: center;
+    bottom: 8%;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 150px;
+    justify-content: center;
+    left: 5px;
+    position: relative;
+    width: 100%;
+}
+
+#atajos {
+    flex-wrap: wrap;
+    display: flex;
+    height: 141px;
+    justify-content: space-around;
+    width: 375px;
+}
+
+#atajos li {
+    bottom: 20px;
+    color: white;
+    line-height: 23px;
+    margin: 12px;
+    position: relative;
+}
+
+#atajos a:visited,
+#atajos a {
+    color: white;
+}
+
+#inbox {
+    display: flex;
+    flex-wrap: wrap;
+    height: 44px;
+    justify-content: center;
+    margin-bottom: 50px;
+    position: relative;
+    top: 20px;
+    width: 355px;
+}
+
+#inbox p {
+    display: inline;
+    font-size: 10.5px;
+    padding-left: 45px;
+    width: 233px;
+
+}
+
+form {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+form input {
+    background: #FFFFFF;
+    border-radius: 50px;
+    gap: 10px;
+    height: 44px;
+    margin: 10px;
+    position: relative;
+    padding: 10px;
+    width: 201px;
+}
+
+form button {
+    background-color: var(--color-principal);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    display: flex;
+    font-size: 16px;
+    gap: 10px;
+    height: 44px;
+    padding: 10px 25px;
+    position: relative;
+    width: 69px;
+}
+
+
+
+
+
+
+
+
+
+
+/*animaciones*/
+
+@keyframes mymove {
+    50% {
+        background-position: bottom;
+    }
+}
+
+main {
+    animation: mymove 15s infinite;
+    background-color: #ffffff;
+    background-image: url(../imagenes/bg-tablet-pattern.svg);
+    background-position: top right;
+    background-repeat: space;
+}
+
+.contenedor4 {
+    animation: mymove 15s infinite;
+    background-image: url(../imagenes/bg-tablet-pattern\ copy.svg);
+    background-position: bottom right;
+    background-repeat: space;
+}
+
+
+
+
+#atajos a:hover {
+    color: #F3603B;
+}
+
+.btn a:focus {
+    background-color: #fd9e87;
+    box-shadow: 0px 4px 7px rgba(250, 49, 49, 0.55);
+
+}
+
+#redes {
+    display: flex;
+    height: 50%;
+    justify-content: space-around;
+    position: relative;
+    right: 5px;
+    width: 100%;
+}
+
+#redes a {
+    transform: scale(1.7);
+}
+
+
+/*Iconos de redes sociales, se pegan como fondo 
+    en un div de 20x20 que coloque en (a) en vez de 
+    como img asociada al link(a) luego se crea copia de 
+    los iconos con el color deseado al hacer hover,
+     y se cambia un fondo por otro */
+
+#avatar1 {
+    background-image: url(../imagenes/icon-facebook.svg);
+    height: 20px;
+    width: 20px;
+}
+
+#avatar2 {
+    background-image: url(../imagenes/icon-youtube.svg);
+    height: 20px;
+    width: 20px;
+}
+
+#avatar3 {
+    background-image: url(../imagenes/icon-twitter.svg);
+    background-repeat: no-repeat;
+    height: 20px;
+    position: relative;
+    top: 1px;
+    transform: scale(1.1);
+    width: 20px;
+}
+
+#avatar4 {
+    background-image: url(../imagenes/icon-pinterest.svg);
+    height: 20px;
+    width: 20px;
+}
+
+#avatar5 {
+    background-image: url(../imagenes/icon-instagram.svg);
+    height: 20px;
+    width: 20px;
+}
+
+
+
+
+
+
+
+/*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*/
+/*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*/
+/*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*/
+/*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*//*Cambio a pantalla desktop*/
+
+
+
+
+
+
+
+@media (min-width: 376px) {
+
+    body,
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 1440px;
+    }
+
+    main {
+        margin-bottom: 50px;
+    }
+
+    h1 {
+        font-size: 58px;
+    }
+
+    h3 {
+        font-size: 36px;
+    }
+
+    li:hover,
+    li:hover p {
+        color: #000000;
+        transform: scale(1.1);
+    }
+
+    header,
+    footer {
+        display: flex;
+        width: 100%;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    footer {
+        flex-direction: column;
+    }
+
+
+
+
+
+
+
+
+
+
+    header {
+        justify-content: space-between;
+        height: 165px;
+        padding: 0 165px;
+    }
+
+    header img {
+        height: 23.74px;
+        width: 145.54px;
+    }
+
+    header .btn {
+        display: inline-block;
+        display: flex;
+        position: relative;
+        z-index: 2;
+    }
+
+    header .btn:hover,
+    form button {
+        cursor: pointer;
+    }
+
+    .menu-wrap .hamburguesa {
+        display: none;
+    }
+
+    .menu-wrap .toggler {
+        display: none;
+    }
+
+    .menu ul li {
+        display: inline-block;
+    }
+
+    .menu ul {
+        display: flex;
+        width: 100%;
+    }
+
+    .menu-wrap .toggler:checked~.menu {
+        visibility: visible;
+    }
+
+    .menu-wrap .toggler:checked~.menu>div {
+        transform: scale(1);
+    }
+
+    .menu-wrap {
+        align-items: center;
+        display: flex;
+        height: 160px;
+        justify-items: center;
+        position: relative;
+        width: 60%;
+        z-index: 1;
+    }
+
+    .menu-wrap .menu {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        position: relative;
+        top: -20px;
+        visibility: visible;
+        width: 100%;
+    }
+
+    .menu-wrap .menu>div>div>ul>li {
+        color: var(--color-secundario);
+        font-size: 16px;
+        list-style: none;
+        padding: 10px;
+    }
+
+    .menu-wrap .menu>div>div>ul>li>a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.4s ease;
+    }
+
+    .menu-wrap .menu>div {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: none;
+        color: var(--color-secundario);
+        display: flex;
+        opacity: 1;
+        position: relative;
+        transform: scale(1);
+        width: 100%;
+    }
+
+    .menu li {
+        color: #17083a;
+    }
+
+    .menu-wrap .menu > div > div {
+        opacity: 1;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .contenedor1,
+    .contenedor2,
+    .contenedor3,
+    .contenedor4,
+    .contenedor5 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    header,
+    .contenedor1,
+    .contenedor2 {
+        padding: 0 165px;
+    }
+
+    .contenedor1 {
+        height: 525px;
+    }
+
+    .minicontenedor1,
+    .minicontenedor2,
+    .minicontenedor3 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 50%;
+    }
+
+    .minicontenedor1 {
+        align-items: flex-start;
+        align-content: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .minicontenedor1 h1,
+    .minicontenedor1 p {
+        margin-top: 20px;
+        padding-right: 35px;
+        text-align: start;
+        width: 100%;
+    }
+
+    .minicontenedor1 p {
+        position: relative;
+        right: 15px;
+    }
+
+    .minicontenedor1 .btn {
+        position: relative;
+        top: 50px;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+
+
+
+
+
+
+
+
+
+    .contenedor2 {
+        height: 557px;
+        margin-top: 150px;
+        position: relative;
+    }
+
+
+    #mini2 {
+        align-items: flex-start;
+        display: flex;
+        height: 100%;
+        justify-content: flex-start;
+        position: relative;
+        width: 50%;
+    }
+
+    #mini2 p {
+        position: absolute;
+        top: 124px;
+    }
+
+    .minicontenedor2 h6 {
+        background-color: rgba(0, 0, 0, 0);
+        line-height: 43px;
+    }
+
+    .minicontenedor2 button {
+        height: 43px;
+        margin-right: 23px;
+    }
+
+    .minicontenedor2 p {
+        padding-left: 92px;
+        text-align: start;
+    }
+
+
+
+
+
+
+
+
+
+
+    .contenedor3 {
+        align-items: center;
+        flex-direction: column;
+        height: 557px;
+    }
+
+    .minicontenedor3 {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .minicontenedor3 .card {
+        width: 100%;
+    }
+
+    .minicontenedor3>ul {
+        display: flex;
+        justify-content: center;
+        overflow: visible;
+    }
+
+
+
+
+
+
+
+
+
+    .contenedor4 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 224px;
+        justify-content: space-between;
+        padding: 0 165px;
+        width: 100%;
+    }
+
+    .contenedor4 h2 {
+        font-size: 38px;
+        text-align: start;
+        width: 500px;
+    }
+
+    .contenedor4 .btn {
+        position: absolute;
+        right: 160px;
+        top: 85px;
+    }
+
+    .contenedor4 .btn:hover {
+        cursor: pointer;
+    }
+
+    .contenedor5 {
+        align-content: space-between;
+        display: flex;
+        height: 247px;
+        justify-content: center;
+        padding: 75px 165px 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .contenedor5 p {
+        bottom: 30px;
+        position: absolute;
+        right: 130px;
+    }
+
+    #redes-sociales {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        justify-content: space-around;
+        width: 154px;
+    }
+
+    #redes {
+        align-items: center;
+        display: flex;
+        height: 50%;
+        justify-content: space-around;
+        margin-top: 50px;
+        position: relative;
+        right: 5px;
+        width: 100%;
+    }
+
+    #redes a {
+        transform: scale(1);
+    }
+
+    #atajos {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: space-around;
+        left: 50px;
+        position: relative;
+        width: 50%;
+    }
+
+    #atajos li {
+        color: white;
+        line-height: 23px;
+        margin: 12px;
+    }
+
+    form {
+        align-items: center;
+        bottom: 50px;
+        display: flex;
+        height: 80%;
+        justify-content: flex-start;
+        position: relative;
+        width: 201px;
+    }
+
+    form input {
+        background: #FFFFFF;
+        border-radius: 50px;
+        gap: 10px;
+        height: 44px;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+        width: 201px;
+    }
+
+    form button {
+        background-color: var(--color-principal);
+        border-radius: 30px;
+        border: none;
+        color: white;
+        display: flex;
+        font-size: 16px;
+        gap: 10px;
+        height: 44px;
+        padding: 10px 25px;
+        position: relative;
+        width: 69px;
+    }
+
+
+    /*Iconos de redes sociales, se pegan como fondo 
+    en un div de 20x20 que coloque en (a) en vez de 
+    como img asociada al link(a) luego se crea copia de 
+    los iconos con el color deseado al hacer hover,
+     y se cambia un fondo por otro */
+
+#avatar1:hover {
+    background-image: url(../imagenes/icon-facebook\ copy.svg);
+}
+
+#avatar2:hover {
+    background-image: url(../imagenes/icon-youtube\ copy.svg);
+}
+
+#avatar3:hover {
+    background-image: url(../imagenes/icon-twitter\ copy.svg);
+}
+
+#avatar4:hover {
+    background-image: url(../imagenes/icon-pinterest\ copy.svg);
+}
+
+#avatar5:hover {
+    background-image: url(../imagenes/icon-instagram\ copy.svg);
+}
+
+
+}
+
+/*THE END*/

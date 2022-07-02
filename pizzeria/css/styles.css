@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+    width: 1025px;
+
+}
+
+header {
+    display: flex;
+    background: #222222;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 100px;
+    align-items: center;
+
+}
+
+#logo {
+    position: relative;
+    left: 20px;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+header li {
+    color: #F3F3F3;
+    display: inline-block;
+    margin: 13px;
+
+}
+
+
+/*para que los links no cambien de color*/
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 20px;
+    height: 400px;
+}
+
+.promo {
+    margin-right: 5px;
+    width: 48%;
+    height: 350px;
+    background-image: url("/img/delivery.jpg");
+    background-repeat: no-repeat;
+
+}
+
+
+
+.promo h2 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: red;
+    font-size: 24px;
+}
+
+.ranking {
+    width: 48%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 350px;
+
+    flex-wrap: wrap;
+}
+
+.ranking ol {
+    position: relative;
+    left: -200px;
+    bottom: 50px;
+    z-index: 1;
+}
+
+.ranking h2 {
+    text-align: center;
+    width: 100%;
+    color: red;
+    font-size: 24px;
+    font-style: normal;
+}
+
+.ranking h3 {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+    font-size: 20px;
+    left: 40px;
+    bottom: 15px;
+}
+
+.ranking li {
+
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 27px;
+    color: #222222;
+}
+
+
+
+.ranking img {
+    position: relative;
+    width: 92px;
+    height: 129px;
+    bottom: 79px;
+    right: 75px;
+}
+
+footer {
+    background-color: #222222;
+    height: 150px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+footer li {
+    position: relative;
+    color: #F3F3F3;
+    left: -30px;
+    margin: 13px;
+}
+
+#logoPie {
+    position: relative;
+    right: 40px;
+}
+
+#blanco {
+    color: #F3F3F3;
+}

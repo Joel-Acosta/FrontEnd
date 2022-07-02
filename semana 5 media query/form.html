@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h5>20% de descuento en todos los productos</h5>
+    </header>
+    <nav>
+        <img src="img\LogoForm.png" alt="logo">
+        <h1>Nombre tienda</h1>
+    </nav>
+    <div class="undernav" >
+        <ul type="none">
+            <li><a href="">Contacto</a></li>
+            <li><a href="">Registrarme</a></li>
+            <li><a href="">Ingresar</a></li>
+        </ul>
+    </div>
+    <main>
+        <div class="caja">
+            <form>
+                <h1>Añadí tu super!</h1>
+                <h3>Agregá tu personaje favorito completando las opciones.</h3>
+                <div class="linea">
+                    <p>*Nombre</p>
+                    <label for="nombre"></label>
+                    <input type="text" id="nombre" name="nombre" placeholder="John Doe" minlength="3" maxlength="15"
+                        required>
+                </div>
+
+                <div class="linea">
+                    <p>Especie</p>
+                    <label for="especie"></label>
+                    <select name="especie" id="especie" placeholder="Especie">Especie
+                        <option value="humanos">Humano</option>
+                        <option value="marcianos">Sayajin</option>
+                        <option value="plutonianos">Kryptoniano</option>
+                    </select>
+                </div>
+                <div class="linea">
+                    <p>Fecha</p>
+                    <label for="fecha"></label>
+                    <input type="date" id="fecha" name="fecha" min="1960-01-01" max="2000-12-31">
+                </div>
+                <div class="linea" id="agregarFoto">
+                    <label for="foto">
+                        <p>Agregar foto </p>
+                        <input type="file" id="foto" class="upload-box" accept=".jpg, .pdf, .png" name="foto"
+                            multiple="" value="file">
+                    </label>
+                </div>
+                <div class="textarea"><label for="descripcion"></label>
+                    <textarea type="text" fix id="descripcion" name="descripcion" placeholder="Descripcion"
+                        minlength="20" maxlength="150" required rows="5" cols="60"></textarea>
+                </div>
+                <div class="check">
+
+                    <label for="poderes">Poderes</label>
+                    <label for="poder1"><input type="checkbox" id="poder1" name="poder" value="Volar"> Volar</label>
+                    <label for="poder2"><input type="checkbox" id="poder2" name="poder" value="Super inteligencia">Super
+                        inteligencia</label>
+                    <label for="poder3"><input type="checkbox" id="poder3" name="poder"
+                            value="Vista de rayo laser">Vista de rayo laser</label>
+                    <label for="poder4"> <input type="checkbox" id="poder4" name="poder"
+                            value="Billetera gorda">Billetera gorda</label>
+
+                    <hr>
+
+                    <p>Tipo de personaje</p>
+                    <label for="tipo1" class="vert">
+                        <input type="radio" id="tipo1" name="tipo" value="Héroe / Heroina" tabindex="3">
+                        Héroe / Heroina </label>
+                    <label for="tipo2" class="vert">
+                        <input type="radio" id="tipo2" name="tipo" value="Villano / Villana">
+                        Villano / Villana </label>
+                </div>
+
+                <button>Añadir</button>
+            </form>
+
+        </div>
+    </main>
+    <footer>
+        <h4>Todos los derechos reservados a FRONT END 1</h4>
+    </footer>
+</body>
+
+</html>
